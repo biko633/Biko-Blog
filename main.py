@@ -159,7 +159,7 @@ def login():
     if form.validate_on_submit():
         the_email = request.form.get("email")
         requester_user = User.query.filter_by(email=the_email).first()
-        if requester_user == None:
+        if requester_user is None:
             flash('That email does not exist, please try again.', 'error')
             return render_template("login.html", form=form)
         elif check_password_hash(requester_user.password, request.form.get('password')):
