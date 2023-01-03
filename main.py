@@ -29,7 +29,7 @@ ckeditor = CKEditor(app)
 Bootstrap(app)
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL",  "sqlite:///blog.db")
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -159,7 +159,7 @@ def login():
     if form.validate_on_submit():
         the_email = request.form.get("email")
         requester_user = User.query.filter_by(email=the_email).first()
-        if requester_user is None:
+        if requester_user == None:
             flash('That email does not exist, please try again.', 'error')
             return render_template("login.html", form=form)
         elif check_password_hash(requester_user.password, request.form.get('password')):
