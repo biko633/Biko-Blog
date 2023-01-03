@@ -29,7 +29,7 @@ ckeditor = CKEditor(app)
 Bootstrap(app)
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://blog_8ndh_user:KYXIo0Por2GnpySyxUAY678xblczhzM6@dpg-cepnj95a4991ihim9r3g-a.oregon-postgres.render.com/blog_8ndh'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
