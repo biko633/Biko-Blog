@@ -24,7 +24,7 @@ def forbidden_page(e):
 
 
 app.register_error_handler(403, forbidden_page)
-app.config['SECRET_KEY'] = "os.getenv('app_key')"
+app.config['SECRET_KEY'] = os.getenv('app_key')
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
